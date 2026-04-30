@@ -196,13 +196,16 @@ function enviarWhatsApp() {
         btn.innerHTML = "⌛ Processando...";
         btn.disabled = true;
 
+        // 1. ABRE O WHATSAPP IMEDIATAMENTE (Isso burla o bloqueio do iPhone)
+        window.open(`https://api.whatsapp.com/send?phone=${numeroDestino}&text=${mensagem}`, '_blank');
+
+        // 2. DEPOIS FAZ A ANIMAÇÃO DA TELA DE SUCESSO NO FUNDO
         setTimeout(() => {
-            window.open(`https://api.whatsapp.com/send?phone=${numeroDestino}&text=${mensagem}`, '_blank');
             btn.innerHTML = textoOriginal;
             btn.disabled = false;
             
             document.getElementById('formularioArea').style.display = 'none';
             document.getElementById('telaSucesso').style.display = 'block';
-        }, 1200);
+        }, 800); // Reduzi um pouco o tempo já que a ação principal já foi feita
     }
 }
