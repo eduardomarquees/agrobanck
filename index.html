@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroBanck - Análise de Crédito</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.svg">
+</head>
+<body>
+
+<div class="container">
+    <div id="formularioArea">
+
+        <div class="banner">
+            <img src="banner.jpeg" alt="AgroBanck" onerror="this.style.display='none'">
+        </div>
+
+        <h2 class="titulo-logo">
+            <span class="cor-agro">Agro</span><span class="cor-banck">Banck</span>
+        </h2>
+        
+        <p class="subtitle">
+            Solicite sua <span id="texto-animado"></span>
+        </p>
+
+        <form id="agroForm">
+            <div class="section-title">Dados Principais</div>
+            <label>Nome Completo</label>
+            <input type="text" id="nome" placeholder="João Silva" required>
+
+            <label>WhatsApp</label>
+            <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+
+            <label>E-mail</label>
+            <input type="email" id="email">
+
+            <label>Cidade/Estado</label>
+            <input type="text" id="local" placeholder="Ex: Cuiabá/MT">
+
+            <label>Empresa / Fazenda / Negócio</label>
+            <input type="text" id="negocio">
+
+            <div class="section-title">Perfil e Interesse</div>
+            <label>Você é:</label>
+            <select id="perfil">
+                <option value="Produtor Rural">Produtor Rural</option>
+                <option value="Empresário">Empresário</option>
+                <option value="Agroindústria">Agroindústria</option>
+                <option value="Cooperativa">Cooperativa</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <!-- Campo outro corrigido (removi o duplicado) -->
+            <input type="text" id="perfil_outro" placeholder="Especifique seu perfil" style="display: none; margin-top: 10px;">
+
+            <label>O que busca hoje?</label>
+            <select id="interesse">
+                <option value="Capital de Giro">Capital de Giro</option>
+                <option value="Máquinas/Equipamentos">Máquinas/Equipamentos</option>
+                <option value="Expansão">Expansão</option>
+                <option value="Crédito Rural">Crédito Rural</option>
+                <option value="FCO">FCO</option>
+                <option value="BNDES">BNDES</option>
+                <option value="Ainda avaliando">Ainda avaliando</option>
+            </select>
+
+            <label>Quanto pretende captar?</label>
+            <select id="valor">
+                <option value="Até 500 mil">Até 500 mil</option>
+                <option value="1 milhão a 5 milhões">1 milhão a 5 milhões</option>
+                <option value="10 milhões a 20 milhões ">10 milhões a 20 milhões</option>
+                <option value="Acima de 20 milhões ">Acima de 20 milhões</option>
+            </select>
+
+            <label for="quando_precisa">Quando precisa?</label>
+            <select id="quando_precisa">
+                <option value="Imediato">Imediato</option>
+                <option value="30 dias">30 dias</option>
+                <option value="60 dias">60 dias</option>
+                <option value="90 dias">90 dias</option>
+            </select>
+
+            <label>Melhor horário para contato</label>
+            <select id="horario">
+                <option value="Manhã (08h às 12h)">Manhã (08h às 12h)</option>
+                <option value="Tarde (13h às 18h)">Tarde (13h às 18h)</option>
+                <option value="Noite (Após 18h)">Noite (Após 18h)</option>
+                <option value="Qualquer horário">Qualquer horário</option>
+            </select>
+
+            <button type="button" onclick="enviarWhatsApp()">Enviar para WhatsApp</button>
+        </form>
+    </div>
+
+    <div id="telaSucesso" style="display: none;">
+        <div style="font-size: 60px; color: #4CAF50; margin-bottom: 20px;">✔</div>
+        <h2>Obrigado!</h2>
+        <p>Nossa equipe entrará em contato.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 AgroBanck - Todos os direitos reservados.</p>
+    <p>Desenvolvido por <strong>Eduardo Marques</strong></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

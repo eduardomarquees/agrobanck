@@ -1,0 +1,237 @@
+:root {
+    --verde-agrobanck: #2c5e2e;
+    --dourado-banck: #b8860b;
+    --branco-premium: #fdfdfd;
+}
+
+html, body {
+    height: 100%; /* Força a altura total */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('fundo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000;
+}
+
+/* --- BARRA DE PROGRESSO (NOVO) --- */
+/* --- BARRA DE PROGRESSO AJUSTADA --- */
+
+
+.container {
+    background: #fdfdfd; 
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid #eee;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: abrirCard 0.8s ease-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.titulo-logo { text-align: center; font-size: 28px; font-weight: 800; margin: 0; }
+.cor-agro { color: var(--verde-agrobanck); }
+.cor-banck { color: var(--dourado-banck); }
+
+.subtitle  {
+    text-align: center;
+    color: #444;
+    margin-bottom: 25px;
+    font-size: 16px;
+    height: 20px; 
+}
+
+#texto-animado {
+    font-weight: bold;
+    color: var(--verde-agrobanck);
+    border-right: 2px solid var(--dourado-banck);
+    padding-right: 5px;
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b8860b' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+.section-title {
+    color: var(--verde-agrobanck);
+    border-bottom: 2px solid var(--dourado-banck);
+    font-size: 12px;
+    font-weight: bold;
+    margin: 25px 0 10px 0;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+}
+
+label { display: block; margin-top: 15px; font-weight: 600; color: #333; font-size: 14px; }
+
+input, select {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--dourado-banck);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(184, 134, 11, 0.2);
+}
+
+/* Bordas de validação */
+input.valido, select.valido {
+    border: 2px solid var(--verde-agrobanck) !important;
+    background-color: rgba(44, 94, 46, 0.05);
+}
+
+input.erro, select.erro {
+    border: 2px solid #a80000 !important;
+    background-color: rgba(168, 0, 0, 0.05);
+}
+
+input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+button {
+    background-color: var(--verde-agrobanck);
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 0px #1a3a1b;
+}
+
+button:hover {
+    background-color: #367539;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0px #1a3a1b;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0; 
+    margin-top: 50px; 
+    border-top: 1px solid rgba(44, 94, 46, 0.3);
+    line-height: 1.6;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+#texto-animado {
+    font-weight: bold;
+    color: var(--verde-agrobanck);
+    border-right: 2px solid var(--dourado-banck);
+    padding-right: 5px;
+    display: inline-block;
+    min-height: 1.2em;
+    vertical-align: bottom;
+}
+
+@keyframes piscaCursor {
+    0%, 100% { border-color: var(--dourado-banck); }
+    50% { border-color: transparent; }
+}
+
+.subtitle strong {
+    font-weight: 800;
+    color: #333;
+}
+
+@keyframes abrirCard {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Menos espaço nas bordas da tela */
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px; /* Reduz o preenchimento interno para ganhar espaço */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .titulo-logo {
+        font-size: 24px; /* Diminui um pouco o título */
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    input, select, button {
+        font-size: 16px; /* Mantém 16px para evitar que o iOS dê zoom automático */
+        padding: 12px;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+}
+
+#telaSucesso { display: none; text-align: center; padding: 40px 0; }
